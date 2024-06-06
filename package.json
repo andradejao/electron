@@ -1,0 +1,23 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "Tutorial electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andradejao/electron.git"
+  },
+  "author": "João Vitor Andrade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andradejao/electron/issues"
+  },
+  "homepage": "https://github.com/andradejao/electron#readme",
+  "devDependencies": {
+    "electron": "^30.1.0"
+  }
+}
