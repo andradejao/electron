@@ -66,3 +66,39 @@ ipcRenderer.on(()=>{})
                       preload.js
 Fluxo: ipcRenderer -> hello() -> main.js (ipcMain)
 
+_________________________________________
+Uso de frameworks (front-end) no electron
+    - bootstrap
+        |_____ local (download)
+1º Passo: Fazer o download do css e js compilado
+2º Passo: Descompactar e copiar o bootstrap.min.css e bootstrap.min.js para a pasta public
+3° Passo: Link com o documento HTML
+4º Passo: Seguir a documentação do bootstrap:
+    Dica: O bootstrap trabalha com classes
+5º Passo: Inicie criando um container (div.container)
+
+_________________________________________
+Relação entre janelas (parent-child) e modal
+    - Foco do usuário no sistema
+    - Segurança e desempenho
+
+1º Passo: Determinar a janela pai (principal)
+2º Passo: Criar o relacionamento entre janelas
+_________________________________________
+
+IPC - Comunicação segura entre Processos
+
+ipcMain (main.js)
+    || <--------------------- preload.js
+ipcRenderer (renderer.js)
+
+Obs:
+1º) main.js (processo principal e único)
+2º) renderer.js (processo de renderização)
+    - Podem existir diversos processos de renderização
+    - renderer.js (nome atríbuido - qualquer nome)
+
+
+
+
+

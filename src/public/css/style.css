@@ -1,0 +1,16 @@
+h1 {
+    color: #008000;
+}
+
+/* Rodapé */
+footer {
+    background-color: #008000;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 10px 10px;
+}

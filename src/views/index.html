@@ -8,14 +8,24 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
     <!-- O Electron usa o título na janela -->
     <title>Tutorial Electron</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <!-- css personalizado -->
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
-    <p id="dataAtual"></p>
-    <h1>Hello, Electron</h1>
-    <button onclick="sobre()">Sobre</button>
-
-    <!-- Processo de Renderização -->
+    <div class="container">
+        <h1>Hello, Electron</h1>
+        <button class="btn btn-outline-success" onclick="sobre()">Sobre</button>
+    </div>
+    <!-- Rodapé -->
+    <footer>
+        <p id="dataAtual"></p>
+    </footer>
+    <!-- bootstrap -->
+    <script src="../public/js/bootstrap.min.js"></script>
+    <!-- Processo de Renderização (sempre no final) -->
     <script src="./renderer.js"></script>
 </body>
 
