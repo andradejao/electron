@@ -1,4 +1,4 @@
-const { app, BrowserWindow, nativeTheme, Menu, shell, ipcMain, ipcRenderer } = require('electron')
+const { app, BrowserWindow, nativeTheme, Menu, shell, ipcMain, ipcRenderer, dialog } = require('electron')
 const path = require('node:path') // Relacionado ao preload.js
 
 // Janela principal
@@ -144,4 +144,40 @@ ipcMain.on('send-message', (event, message) => {
 // 3º Exemplo: Recebimento do renderer de uma ação a ser executada
 ipcMain.on('open-about', () => {
     aboutWindow()
+})
+
+// Dialogs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Caixa simples de mensagem
+ipcMain.on('dialog-info', () => {
+    dialog.showMessageBox({
+        type: 'info',
+        title: "Título da mensagem",
+        message: "Mensagem",
+        buttons: ['Ok']
+    })
+})
+
+// Caixa de confirmação
+ipcMain.on('dialog-warning', () => {
+    dialog.showMessageBox({
+        type: 'warning',
+        title: "Atenção!",
+        message: "Confirma a exclusão deste registro?",
+        buttons: ['Não', 'Sim']
+    }).then((result) => {
+        console.log(result)
+        if (result.response === 1) {
+            console.log("Registro excluído com sucesso")
+        }
+    })
+})
+
+// Explorador de arquivos
+ipcMain.on('dialog-select', () => {
+    dialog.showOpenDialog({
+        properties: ['openDirectory']
+    }).then((result) => {
+        console.log(result)
+    })
 })

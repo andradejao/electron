@@ -19,3 +19,16 @@ api.answer((event, message) => {
 function sobre() {
     api.openAbout()
 }
+
+// Dialogs (caixas de mensagem)
+function info(){
+    api.info()
+}
+
+function warning(){
+    api.warning()
+}
+
+function select() {
+    api.select()
+}
