@@ -164,10 +164,11 @@ ipcMain.on('dialog-warning', () => {
         type: 'warning',
         title: "Atenção!",
         message: "Confirma a exclusão deste registro?",
-        buttons: ['Não', 'Sim']
+        buttons: ['Sim', 'Não'],
+        defaultId: 0
     }).then((result) => {
         console.log(result)
-        if (result.response === 1) {
+        if (result.response === 0) {
             console.log("Registro excluído com sucesso")
         }
     })
